@@ -1,11 +1,24 @@
+<div align="center">
+
 # SteppeOS  
 AI operating system for regional management.  
 
-## Overview  
+![Status](https://img.shields.io/badge/Status-MVP%20Active-2ecc71?style=flat&logo=rocket&logoColor=white)
+![Version](https://img.shields.io/badge/Version-4.0-3498db?style=flat&logo=gitbook&logoColor=white)
+![City](https://img.shields.io/badge/City-Shymkent,%20KZ-f1c40f?style=flat&logo=mapmarker&logoColor=black)
+
+</div>
+
+## What is SteppeOS?   
 
 SteppeOS is an AI-powered operating system for managing cities and regions.
 It is not just an application.
 It is a data and AI platform that treats a region as a living system and helps governments, businesses, and planners make data-driven decisions about development, infrastructure, and sustainability.  
+
+> **Why "Operating System"?**
+> Just as Windows manages all programs on a computer, SteppeOS manages all data systems of a region — replacing dozens of disconnected platforms with a single intelligent environment where all data is unified and analyzed together.   
+
+---
 
 ## Problem  
 
@@ -26,6 +39,8 @@ Because of this fragmentation:
 As a result, governments can invest billions into infrastructure without clearly understanding the long-term impact.
 I'm not underestimating the capabilities of the government of our country and their regions, I'm just relying on the existence of a human factor: to miss a small but important detail in a huge flow of information, or to forget something, and so on.
 
+---
+
 ## Solution  
 SteppeOS is the digital brain of a region.
 The platform collects data from multiple sources and creates a live digital model of a city or region in real time.
@@ -35,16 +50,7 @@ Using AI, the system analyzes the data and helps decision-makers understand:
 - what will happen in the future.
 The result is faster, smarter, and more sustainable regional development.
 
-## Why an "Operating System"?  
-An operating system (OS) is the central layer that connects and manages all other systems.
-
-Examples:
-- Windows manages programs on computers;
-- Android manages applications on smartphones.
-
-In the same way:
-SteppeOS manages the data systems of a region.
-Instead of dozens of disconnected platforms, SteppeOS creates one intelligent environment where all data is unified and analyzed together.  
+---
 
 ## Main functions  
 1. AI Regional Map  
@@ -91,8 +97,10 @@ SteppeOS embodies this principle by:
 - promoting sustainable economic growth;
 - improving quality of life for citizens.   
 
+---
+
 ## MVP (Minimum Viable Product)  
-The MVP will focus on one city: Shymkent, Kazakhstan.
+The current MVP is focused on one city: Shymkent, Kazakhstan.
 MVP Components:
 - Interactive city map;
 - Multiple data layers (population, roads, business zones, etc.);
@@ -100,21 +108,27 @@ MVP Components:
 Example insight:
 “This district is growing rapidly — additional schools and transport infrastructure will be required within five years.”  
 
-## AI model
+## AI model   
 - population growth forecasting;
 - urban trend analysis;
-- machine learning models for prediction.  
+- machine learning models for prediction.   
 
-## Target customers  
-Potential clients include:
-- regional administrations (akimats);
-- national ministries;
-- infrastructure planning agencies;
-- industrial development zones;
-- real estate developers.  
+**Live AI flows running in the platform:**   
+- `proactiveRiskDetectionWarning` — scans 12 district metrics, generates typed warnings with severity and recommended actions.
+- `aiGeneratedRegionalInsights` — synthesizes demographic, business, and infrastructure trend data into structured intelligence reports.
+- `simulateDevelopmentScenario` — models economic, traffic, and environmental impact of any proposed project.   
 
-## Business model  
-SteppeOS operates as a B2G and B2B platform.  
+## Business Model   
+SteppeOS operates as a **B2G** (Business-to-Government) and **B2B** (Business-to-Business) platform.   
+
+| Revenue Stream | Description |
+|---|---|
+| Government Licensing | Annual SaaS license for regional administrations and ministries |
+| Subscription Analytics | Tiered access to dashboards, AI flows, and data exports |
+| API Access | Developer API for urban planning companies and real estate firms |
+| Consulting & Data Services | Custom implementation, training, and data partnership programs |
+
+**Target customers:** Regional administrations (akimats) · National ministries · Infrastructure planning agencies · Industrial development zones · Real estate developers.   
 
 Revenue streams:
 - government software licensing;
@@ -128,51 +142,44 @@ Today, cities are managed by dozens of disconnected systems and spreadsheets.
 But they lack a single digital brain that can understand and predict the future of a region.
 We are building SteppeOS — the AI operating system for regional development.
 ```
+
+---
+
 ## FAQ (Frequently Asked Questions)  
-1. Where will you get the data?  
-SteppeOS uses multiple sources:
-- government open data;
-- satellite and geospatial data;
-- transportation statistics;
-- census data;
-- environmental monitoring systems.
-Additional data partnerships can be established with regional authorities.  
 
-2. How accurate are your predictions?  
-Predictions are based on:
-- historical regional data;
-- machine learning models;
-- statistical forecasting.
-The goal is not to guarantee exact outcomes, but to provide data-driven decision support that is significantly more reliable than manual planning.  
+<details>
+<summary><strong>Where does the data come from?</strong></summary>
 
-3. Why does this product need AI?  
-Cities and regions generate massive, complex datasets.
-AI is essential to:
-- detect hidden patterns;
-- forecast future trends;
-- simulate development scenarios.
-Without AI, these insights would be extremely difficult to obtain.  
+SteppeOS integrates multiple sources: government open data, satellite and geospatial data, transportation statistics, census data, and environmental monitoring systems. Additional data partnerships can be established directly with regional authorities.
+</details>
 
-4. Who will pay for this product?  
-Primary customers include:
-- regional governments;
-- ministries responsible for infrastructure and development;
-- industrial zone planners;
-- large real estate developers;
-These organizations regularly invest millions or billions in infrastructure, making analytics platforms highly valuable.  
+<details>
+<summary><strong>How accurate are the predictions?</strong></summary>
 
-5. How is this different from existing GIS systems?  
-Traditional GIS platforms visualize data.
-SteppeOS goes further by:
-- integrating multiple data systems;
-- applying AI analysis;
-- simulating future scenarios;
-- providing automated development recommendations;  
+Predictions are built on historical regional data, machine learning models, and statistical forecasting. The goal is not to guarantee exact outcomes — it is to provide data-driven decision support that is significantly more reliable than manual planning. The current MVP targets ±2–5% accuracy on 3-year forecasts.
+</details>
 
-In short:  
-GIS shows the present. SteppeOS predicts the future.
-6. What is your long-term vision?
-The long-term goal is to scale SteppeOS into a national and international platform for AI-driven regional planning, starting in Kazakhstan and expanding to Central Asia and other developing regions.  
+<details>
+<summary><strong>How is this different from existing GIS systems?</strong></summary>
+
+Traditional GIS platforms visualize data. SteppeOS goes further by integrating multiple data systems, applying AI analysis, simulating future scenarios, and providing automated development recommendations.
+
+**GIS shows the present. SteppeOS predicts the future.**
+</details>
+
+<details>
+<summary><strong>Why does this need AI — can't it be done with regular software?</strong></summary>
+
+Cities and regions generate massive, complex, and interdependent datasets. AI is essential to detect hidden patterns across domains (e.g., how population growth in one district affects energy demand in another), forecast multi-variable future trends, and simulate development scenarios with compounding effects. Without AI, these insights would require teams of analysts working for weeks — per question.
+</details>
+
+<details>
+<summary><strong>What is the long-term vision?</strong></summary>
+
+Scale SteppeOS from Shymkent into a national and then international platform for AI-driven regional planning — starting in Kazakhstan, expanding to Central Asia, and ultimately serving any developing region that needs to make high-stakes infrastructure decisions with limited data infrastructure.
+</details>
+
+---
 
 ## SteppeOS architecture  
 1) Frontend  
@@ -209,12 +216,20 @@ The long-term goal is to scale SteppeOS into a national and international platfo
    - transport data;
    - environmental sensors.  
 
-## What the usage looks like  
-The user opens the SteppeOS web dashboard.
-He sees:
-- city map;
-- analytical charts;
-- forecasts.
-He can ask a question:
-“What happens if a new road is built here?”
-AI shows the forecast.  
+## Tech stack   
+
+![HTML5](https://img.shields.io/badge/HTML5-151515?style=for-the-badge&logo=html5&logoColor=E34F26)
+![CSS3](https://img.shields.io/badge/CSS3-101010?style=for-the-badge&logo=css3&logoColor=00E5FF)
+![JS](https://img.shields.io/badge/JavaScript-151515?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![Chart.js](https://img.shields.io/badge/Chart.js-151515?style=for-the-badge&logo=chartdotjs&logoColor=FF6384)
+![Leaflet](https://img.shields.io/badge/Leaflet-151515?style=for-the-badge&logo=leaflet&logoColor=199900)
+
+---
+
+<div align="center">
+
+*SteppeOS — Built for the cities of tomorrow.*
+
+![Kazakhstan](https://img.shields.io/badge/🇰🇿%20Made%20in-Kazakhstan-0077FF?style=flat&labelColor=333333)
+
+</div>
