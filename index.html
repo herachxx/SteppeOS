@@ -17,9 +17,8 @@
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-logo">
     <div class="logo-name">SteppeOS</div>
-    <div class="logo-sub">Regional intelligence</div>
+    <div class="logo-sub">Regional Intelligence · Shymkent</div>
   </div>
-
   <nav class="sidebar-nav">
     <div class="nav-section-label">Platform</div>
     <a class="nav-item active" data-page="dashboard" href="#">
@@ -28,23 +27,27 @@
     </a>
     <a class="nav-item" data-page="map" href="#">
       <span class="nav-item-icon"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M7 1C4.8 1 3 2.8 3 5c0 3 4 8 4 8s4-5 4-8c0-2.2-1.8-4-4-4z"/><circle cx="7" cy="5" r="1.5"/></svg></span>
-      <span class="nav-item-label">AI region map</span>
+      <span class="nav-item-label">AI Region Map</span>
     </a>
     <a class="nav-item" data-page="simulation" href="#">
       <span class="nav-item-icon"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M1 12l3-5 3 3 3-5 3 7"/></svg></span>
-      <span class="nav-item-label">Simulation engine</span>
+      <span class="nav-item-label">Simulation Engine</span>
     </a>
     <a class="nav-item" data-page="risks" href="#">
       <span class="nav-item-icon"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M7 1l6 10H1L7 1z"/><line x1="7" y1="5" x2="7" y2="8"/><circle cx="7" cy="10" r="0.4" fill="currentColor"/></svg></span>
-      <span class="nav-item-label">Risk detection</span>
-      <span class="nav-badge">3</span>
+      <span class="nav-item-label">Risk Detection</span>
+      <span class="nav-badge" id="riskBadge">—</span>
+    </a>
+    <a class="nav-item" data-page="insights" href="#">
+      <span class="nav-item-icon"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="7" cy="7" r="6"/><path d="M7 4v4M7 9.5v.5" stroke-linecap="round"/></svg></span>
+      <span class="nav-item-label">Regional Insights</span>
+      <span class="nav-badge ok">AI</span>
     </a>
     <a class="nav-item" data-page="recommendations" href="#">
       <span class="nav-item-icon"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="1" y="1" width="12" height="12" rx="1"/><line x1="4" y1="5" x2="10" y2="5"/><line x1="4" y1="7.5" x2="8" y2="7.5"/><line x1="4" y1="10" x2="7" y2="10"/></svg></span>
       <span class="nav-item-label">Recommendations</span>
     </a>
-
-    <div class="nav-section-label" style="margin-top:14px">Data layers</div>
+    <div class="nav-section-label" style="margin-top:14px">Data Layers</div>
     <a class="nav-item" data-page="demographics" href="#">
       <span class="nav-item-icon"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="5" cy="5" r="2"/><circle cx="10" cy="5" r="1.5"/><path d="M1 12c0-2.2 1.8-4 4-4s4 1.8 4 4"/><path d="M10 8c1.7 0 3 1.3 3 3"/></svg></span>
       <span class="nav-item-label">Demographics</span>
@@ -59,13 +62,12 @@
       <span class="nav-badge ok">!</span>
     </a>
   </nav>
-
   <div class="sidebar-status">
     <div class="status-row">
       <div class="status-dot"></div>
       <span class="status-text">Live · Shymkent, KZ</span>
     </div>
-    <div class="status-version">v3.0 · MVP build · 2026</div>
+    <div class="status-version">v4.0 · Genkit Flows · 2025</div>
   </div>
 </aside>
 
@@ -84,19 +86,18 @@
       <div class="topbar-sep"></div>
       <div class="time-badge" id="timeBadge">--:--:--</div>
       <div class="topbar-sep"></div>
-      <div class="ai-status"><span class="pulse-dot-sm"></span>AI active</div>
+      <div class="ai-status"><span class="pulse-dot-sm"></span>AI Active</div>
     </div>
   </header>
 
   <!-- DASHBOARD -->
   <div class="page active" id="page-dashboard">
     <div class="page-inner">
-
       <div class="page-header">
         <div class="page-header-left">
           <div class="page-label">Overview</div>
-          <h1>Regional dashboard</h1>
-          <p class="page-desc">Shymkent metropolitan area · Real-time intelligence feed</p>
+          <h1>Regional Dashboard</h1>
+          <p class="page-desc">Shymkent Metropolitan Area · Real-time intelligence feed</p>
         </div>
         <div class="page-header-actions">
           <button class="btn" onclick="showToast('Report exported','success')">
@@ -110,110 +111,90 @@
         </div>
       </div>
 
-      <!-- KPI GRID - data-label used as pseudo ::before content -->
       <div class="kpi-grid">
-        <div class="kpi-card" data-label="Population" data-color="neutral">
-          <div class="kpi-top">
-            <div class="kpi-val" data-target="1072000">0</div>
-            <div class="kpi-sparkline" id="spark0"></div>
-          </div>
+        <div class="kpi-card" data-label="Population">
+          <div class="kpi-top"><div class="kpi-val" data-target="1072000">0</div><div class="kpi-sparkline" id="spark0"></div></div>
           <div class="kpi-delta up">↑ 2.3% YoY</div>
         </div>
-        <div class="kpi-card" data-label="Smart Sensors Online" data-color="neutral">
-          <div class="kpi-top">
-            <div class="kpi-val" data-target="84">0</div>
-            <div class="kpi-sparkline" id="spark1"></div>
-          </div>
+        <div class="kpi-card" data-label="Smart Sensors Online">
+          <div class="kpi-top"><div class="kpi-val" data-target="84">0</div><div class="kpi-sparkline" id="spark1"></div></div>
           <div class="kpi-delta up">↑ +12 this month</div>
         </div>
-        <div class="kpi-card" data-label="Energy Consumption" data-color="neutral">
-          <div class="kpi-top">
-            <div class="kpi-val" data-target="1840" data-suffix=" MW">0</div>
-            <div class="kpi-sparkline" id="spark2"></div>
-          </div>
+        <div class="kpi-card" data-label="Energy Consumption">
+          <div class="kpi-top"><div class="kpi-val" data-target="1840" data-suffix=" MW">0</div><div class="kpi-sparkline" id="spark2"></div></div>
           <div class="kpi-delta down">↓ −4.1% from peak</div>
         </div>
-        <div class="kpi-card" data-label="Active Risk Alerts" data-color="neutral">
-          <div class="kpi-top">
-            <div class="kpi-val" data-target="3">0</div>
-            <div class="kpi-sparkline" id="spark3"></div>
-          </div>
-          <div class="kpi-delta down">2 high priority</div>
+        <div class="kpi-card" data-label="Active Risk Alerts">
+          <div class="kpi-top"><div class="kpi-val" id="riskKpiVal" data-target="3">0</div><div class="kpi-sparkline" id="spark3"></div></div>
+          <div class="kpi-delta down" id="riskKpiDesc">Loading AI data…</div>
         </div>
-        <div class="kpi-card" data-label="Annual Budget Tracked" data-color="neutral">
-          <div class="kpi-top">
-            <div class="kpi-val" data-target="6.2" data-suffix="B ₸">0</div>
-            <div class="kpi-sparkline" id="spark4"></div>
-          </div>
+        <div class="kpi-card" data-label="Annual Budget Tracked">
+          <div class="kpi-top"><div class="kpi-val" data-target="6.2" data-suffix="B ₸">0</div><div class="kpi-sparkline" id="spark4"></div></div>
           <div class="kpi-delta up">↑ +8.7% utilization</div>
         </div>
-        <div class="kpi-card" data-label="AI Model Accuracy" data-color="neutral">
-          <div class="kpi-top">
-            <div class="kpi-val" data-target="94" data-suffix="%">0</div>
-            <div class="kpi-sparkline" id="spark5"></div>
-          </div>
+        <div class="kpi-card" data-label="AI Model Accuracy">
+          <div class="kpi-top"><div class="kpi-val" data-target="94" data-suffix="%">0</div><div class="kpi-sparkline" id="spark5"></div></div>
           <div class="kpi-delta up">±2.4% margin</div>
         </div>
       </div>
 
-      <!-- CHARTS SECTION 1 -->
       <div class="chart-section">
         <div class="charts-row">
           <div class="chart-card wide h180">
             <div class="chart-header">
-              <div><div class="chart-title">Population forecast</div><div class="chart-sub">Historical + AI projection 2019–2030</div></div>
-              <div class="chart-badge ai">AI model</div>
+              <div><div class="chart-title">Population Forecast</div><div class="chart-sub">Historical + AI projection 2019–2030</div></div>
+              <div class="chart-badge ai">AI Model</div>
             </div>
             <div class="canvas-wrap"><canvas id="popChart"></canvas></div>
           </div>
           <div class="chart-card h180">
-            <div class="chart-header">
-              <div><div class="chart-title">Economic sectors</div><div class="chart-sub">Distribution by type</div></div>
-            </div>
+            <div class="chart-header"><div><div class="chart-title">Economic Sectors</div><div class="chart-sub">Distribution by type</div></div></div>
             <div class="canvas-wrap"><canvas id="sectorChart"></canvas></div>
           </div>
         </div>
       </div>
 
-      <!-- CHARTS SECTION 2 -->
       <div class="chart-section">
         <div class="charts-row">
           <div class="chart-card h160">
             <div class="chart-header">
-              <div><div class="chart-title">Energy load · 24h</div><div class="chart-sub">Megawatts</div></div>
+              <div><div class="chart-title">Energy Load · 24h</div><div class="chart-sub">Megawatts</div></div>
               <div class="chart-badge live">Live</div>
             </div>
             <div class="canvas-wrap"><canvas id="energyChart"></canvas></div>
           </div>
           <div class="chart-card wide h160">
-            <div class="chart-header">
-              <div><div class="chart-title">Infrastructure index by district</div><div class="chart-sub">Score across roads, utilities, social (0–100)</div></div>
-            </div>
+            <div class="chart-header"><div><div class="chart-title">Infrastructure Index by District</div><div class="chart-sub">Score across roads, utilities, social (0–100)</div></div></div>
             <div class="canvas-wrap"><canvas id="infraChart"></canvas></div>
           </div>
         </div>
       </div>
 
-      <!-- BOTTOM PANELS -->
+      <!-- AI BRIEFING STRIP - live from regional insights flow -->
+      <div class="ai-briefing-strip" id="aiBriefingStrip">
+        <div class="briefing-label">
+          <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1"><circle cx="5" cy="5" r="4"/><path d="M5 3v3M5 7.2v.3" stroke-linecap="round"/></svg>
+          AI Briefing
+        </div>
+        <div class="briefing-text" id="briefingText">
+          <span class="dot-loader"><span></span><span></span><span></span></span>
+        </div>
+      </div>
+
       <div class="panels-row">
+        <!-- LIVE RISK PANEL - populated by proactive risk flow -->
         <div class="panel-card">
-          <div class="panel-label">Risk alerts</div>
-          <div class="alert-item">
-            <span class="alert-sev err">High</span>
-            <div><div class="alert-title">Traffic congestion · Abay ave</div><div class="alert-desc">Projected 40% capacity breach by Q2 2025. Upgrade recommended.</div></div>
-          </div>
-          <div class="alert-item">
-            <span class="alert-sev err">High</span>
-            <div><div class="alert-title">School capacity · Alatau district</div><div class="alert-desc">Growth rate implies 2,400-seat shortfall within 5 years.</div></div>
-          </div>
-          <div class="alert-item">
-            <span class="alert-sev warn">Med</span>
-            <div><div class="alert-title">Air quality · Industrial zone</div><div class="alert-desc">PM2.5 trending above WHO threshold. Monitoring escalated.</div></div>
+          <div class="panel-label">Risk Alerts · AI</div>
+          <div id="dashRiskList">
+            <div style="color:var(--t2);font-size:10px;display:flex;align-items:center;gap:7px;padding:6px 0">
+              <span class="dot-loader"><span></span><span></span><span></span></span> Scanning…
+            </div>
           </div>
         </div>
 
+        <!-- DAILY BRIEFING summary -->
         <div class="panel-card">
-          <div class="panel-label">AI daily briefing</div>
+          <div class="panel-label">District Analysis · Al-Farabi</div>
           <div class="insight-text" id="insightText">
             <span style="color:var(--t2);display:flex;align-items:center;gap:8px;font-size:10px">
               <span class="dot-loader"><span></span><span></span><span></span></span>
@@ -222,23 +203,14 @@
           </div>
         </div>
 
+        <!-- TOP RECS from insights flow -->
         <div class="panel-card">
-          <div class="panel-label">Top recommendations</div>
-          <div class="rec-item">
-            <span class="rec-num">01</span>
-            <div><div class="rec-title">East–west BRT corridor</div><div class="rec-desc">−22 min commute for 180,000 daily residents</div></div>
-          </div>
-          <div class="rec-item">
-            <span class="rec-num">02</span>
-            <div><div class="rec-title">North industrial rezoning</div><div class="rec-desc">8,400 jobs · ₸2.1B annual output</div></div>
-          </div>
-          <div class="rec-item">
-            <span class="rec-num">03</span>
-            <div><div class="rec-title">Syr darya green buffer</div><div class="rec-desc">Ecological index +0.34 within 3 years</div></div>
+          <div class="panel-label">AI Recommendations</div>
+          <div id="dashRecList">
+            <div style="color:var(--t2);font-size:10px;padding:6px 0">Loading…</div>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 
@@ -246,7 +218,7 @@
   <div class="page" id="page-map">
     <div class="page-inner full">
       <div class="map-toolbar">
-        <div class="map-toolbar-title">AI region map · Shymkent</div>
+        <div class="map-toolbar-title">AI Region Map · Shymkent</div>
         <div class="map-layers">
           <button class="layer-btn active" data-layer="transport">Transport</button>
           <button class="layer-btn active" data-layer="industry">Industry</button>
@@ -261,79 +233,62 @@
       </div>
       <div id="leafletMap"></div>
       <div class="map-legend">
-        <div class="legend-item"><span class="leg-dot" style="background:#7DC8FF"></span>Transport hub</div>
-        <div class="legend-item"><span class="leg-dot" style="background:#D4B94A"></span>Industrial zone</div>
-        <div class="legend-item"><span class="leg-dot" style="background:#6EDBA0"></span>Green zone</div>
-        <div class="legend-item"><span class="leg-dot" style="background:#FF6B6B"></span>Risk zone</div>
+        <div class="legend-item"><span class="leg-dot" style="background:#7DC8FF"></span>Transport Hub</div>
+        <div class="legend-item"><span class="leg-dot" style="background:#D4B94A"></span>Industrial Zone</div>
+        <div class="legend-item"><span class="leg-dot" style="background:#6EDBA0"></span>Green Zone</div>
+        <div class="legend-item"><span class="leg-dot" style="background:#FF6B6B"></span>Risk Zone</div>
       </div>
     </div>
   </div>
 
-  <!-- SIMULATION -->
+  <!-- ── SIMULATION ENGINE (upgraded with 3-domain output) ── -->
   <div class="page" id="page-simulation">
     <div class="page-inner">
       <div class="page-header">
         <div class="page-header-left">
           <div class="page-label">Analysis</div>
-          <h1>Future simulation engine</h1>
-          <p class="page-desc">Model development scenarios before committing resources</p>
+          <h1>Development Scenario Simulation</h1>
+          <p class="page-desc">AI models economic, traffic, and environmental impact before you commit resources</p>
         </div>
       </div>
 
       <div class="sim-layout">
         <div class="sim-panel">
-          <div class="sim-section-title">Scenario parameters</div>
+          <div class="sim-section-title">Project Parameters</div>
           <div class="form-group">
-            <label>Scenario type</label>
+            <label>Project Name</label>
+            <input type="text" id="projectName" class="form-input" placeholder="e.g. South Logistics Hub"/>
+          </div>
+          <div class="form-group">
+            <label>Project Type</label>
             <select id="scenarioType">
-              <option value="factory">New industrial facility</option>
-              <option value="road">Major road / highway</option>
-              <option value="school">Educational campus</option>
-              <option value="hospital">Healthcare complex</option>
-              <option value="residential">Residential district</option>
-              <option value="park">Green park / reserve</option>
+              <option value="factory">Industrial / Factory</option>
+              <option value="residential">Residential Complex</option>
+              <option value="commercial">Commercial / Retail Hub</option>
+              <option value="infrastructure">Public Infrastructure</option>
+              <option value="school">Educational Campus</option>
+              <option value="hospital">Healthcare Complex</option>
+              <option value="park">Green Park / Reserve</option>
             </select>
           </div>
           <div class="form-group">
-            <label>Location district</label>
+            <label>Location District</label>
             <select id="locationDistrict">
-              <option>Alatau district</option>
-              <option>Abay district</option>
-              <option>Al-Farabi district</option>
-              <option>Karatau district</option>
-              <option>Turan district</option>
-              <option>North industrial zone</option>
+              <option>Alatau District</option>
+              <option>Abay District</option>
+              <option>Al-Farabi District</option>
+              <option>Karatau District</option>
+              <option>Turan District</option>
+              <option>North Industrial Zone</option>
             </select>
           </div>
           <div class="form-group">
-            <label>Investment scale</label>
-            <input type="range" id="investScale" min="1" max="50" value="10" class="slider"/>
-            <div class="slider-row">
-              <span class="slider-min">₸1B</span>
-              <span class="slider-val" id="investVal">₸10B</span>
-              <span class="slider-min">₸50B</span>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Forecast horizon</label>
-            <input type="range" id="horizonScale" min="1" max="20" value="5" class="slider"/>
-            <div class="slider-row">
-              <span class="slider-min">1 yr</span>
-              <span class="slider-val" id="horizonVal">5 years</span>
-              <span class="slider-min">20 yr</span>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Environmental standard</label>
-            <select id="envCompliance">
-              <option>Standard (Kazakh norms)</option>
-              <option>Enhanced (EU standard)</option>
-              <option>Minimal (rapid deployment)</option>
-            </select>
+            <label>Project Description</label>
+            <textarea id="projectDesc" class="form-textarea" placeholder="Describe size, workforce, expected output, timeline…" rows="4"></textarea>
           </div>
           <button class="sim-run-btn" id="runSimBtn">
             <svg viewBox="0 0 12 12" fill="currentColor"><path d="M3 2l7 4-7 4V2z"/></svg>
-            Run AI simulation
+            Run AI Simulation
           </button>
         </div>
 
@@ -344,118 +299,121 @@
               <polygon points="24,14 34,19 34,29 24,34 14,29 14,19"/>
               <circle cx="24" cy="24" r="5" stroke-dasharray="3 3"/>
             </svg>
-            <p>Configure a scenario and run the simulation to see AI-generated impact forecasts across economic, social, and environmental dimensions.</p>
+            <p>Name a project, choose a type and district, describe it briefly, then run the simulation. The AI models economic, traffic, and environmental outcomes independently.</p>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ── RISKS ── -->
+  <!-- ── RISK DETECTION (live AI-generated) ── -->
   <div class="page" id="page-risks">
     <div class="page-inner">
       <div class="page-header">
         <div class="page-header-left">
           <div class="page-label">Monitoring</div>
-          <h1>Early risk detection</h1>
-          <p class="page-desc">AI monitors regional systems for emerging threats and anomalies</p>
+          <h1>Proactive Risk Detection</h1>
+          <p class="page-desc">AI continuously scans district metrics and projects infrastructure overloads</p>
         </div>
         <div class="page-header-actions">
-          <button class="btn accent" onclick="showToast('All risks reviewed and logged','success')">Mark all reviewed</button>
+          <button class="btn" id="riskRefreshBtn">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2"><polyline points="1 3 1 7 5 7"/><path d="M2.5 11a5 5 0 1 0 0-8.5L1 4"/></svg>
+            Re-scan
+          </button>
+          <button class="btn accent" onclick="showToast('All risks reviewed and logged','success')">Mark Reviewed</button>
         </div>
       </div>
-      <div class="risk-grid">
 
-        <div class="risk-card">
-          <div class="risk-card-top">
-            <span class="risk-badge critical">Critical</span>
-            <span class="risk-time">4m ago</span>
+      <!-- district selector for re-scan -->
+      <div class="risk-controls">
+        <div class="risk-controls-label">Scanning district:</div>
+        <select id="riskDistrict" class="risk-district-select">
+          <option value="Karatau">Karatau District</option>
+          <option value="Alatau">Alatau District</option>
+          <option value="Abay">Abay District</option>
+          <option value="Al-Farabi">Al-Farabi District</option>
+          <option value="Turan">Turan District</option>
+        </select>
+      </div>
+
+      <!-- risk summary bar (populated after load) -->
+      <div class="risk-summary-bar" id="riskSummaryBar" style="display:none">
+        <div class="risk-summary-text" id="riskSummaryText"></div>
+      </div>
+
+      <!-- loading state -->
+      <div id="riskLoadingState" class="flow-loading">
+        <span class="dot-loader"><span></span><span></span><span></span></span>
+        <span>AI scanning district health data…</span>
+      </div>
+
+      <!-- generated risk grid -->
+      <div class="risk-grid" id="riskGrid" style="display:none"></div>
+    </div>
+  </div>
+
+  <!-- REGIONAL INSIGHTS (new AI flow) -->
+  <div class="page" id="page-insights">
+    <div class="page-inner">
+      <div class="page-header">
+        <div class="page-header-left">
+          <div class="page-label">Intelligence</div>
+          <h1>Regional Insights</h1>
+          <p class="page-desc">AI synthesizes demographic, business, and infrastructure data into actionable intelligence</p>
+        </div>
+        <div class="page-header-actions">
+          <select id="insightsDistrict" class="risk-district-select">
+            <option value="Al-Farabi District">Al-Farabi District</option>
+            <option value="Alatau District">Alatau District</option>
+            <option value="Abay District">Abay District</option>
+            <option value="Karatau District">Karatau District</option>
+            <option value="Turan District">Turan District</option>
+          </select>
+          <button class="btn accent" id="insightsRefreshBtn">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2"><polyline points="1 3 1 7 5 7"/><path d="M2.5 11a5 5 0 1 0 0-8.5L1 4"/></svg>
+            Analyze District
+          </button>
+        </div>
+      </div>
+
+      <div id="insightsLoadingState" class="flow-loading">
+        <span class="dot-loader"><span></span><span></span><span></span></span>
+        <span>Synthesizing district analytics…</span>
+      </div>
+
+      <div id="insightsContent" style="display:none">
+        <!-- summary card -->
+        <div class="insights-summary-card">
+          <div class="insights-summary-label">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="6" cy="6" r="5"/><path d="M6 4v3M6 8.2v.3" stroke-linecap="round"/></svg>
+            Summary Analysis
           </div>
-          <div class="risk-title">Traffic network saturation</div>
-          <div class="risk-body">Abay avenue projected to exceed capacity by 38% within 18 months based on current growth. AI confidence: 91%.</div>
-          <div class="risk-bar-label">Risk Level</div>
-          <div class="risk-bar"><div class="risk-fill" style="width:91%;background:var(--err)"></div></div>
-          <div class="risk-actions">
-            <button class="risk-btn accent" onclick="navigateTo('simulation')">Simulate</button>
-            <button class="risk-btn" onclick="showToast('Task assigned to Engineering','success')">Assign</button>
+          <div class="insights-summary-text" id="insightsSummary"></div>
+        </div>
+
+        <!-- trends + recommendations grid -->
+        <div class="insights-two-col">
+          <div class="insights-col">
+            <div class="insights-col-label up">
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2"><polyline points="1 9 5 5 8 7 11 3"/></svg>
+              Key Growth Trends
+            </div>
+            <div id="insightsTrends" class="insights-list"></div>
+          </div>
+          <div class="insights-col">
+            <div class="insights-col-label accent">
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="6" cy="9" r="1" fill="currentColor"/><path d="M6 2v5"/></svg>
+              Strategic Recommendations
+            </div>
+            <div id="insightsRecs" class="insights-list"></div>
           </div>
         </div>
 
-        <div class="risk-card">
-          <div class="risk-card-top">
-            <span class="risk-badge high">High</span>
-            <span class="risk-time">12m ago</span>
-          </div>
-          <div class="risk-title">School infrastructure shortfall</div>
-          <div class="risk-body">Alatau and Turan growing at 3.1% annually. School capacity insufficient for 2,400+ students by 2029. AI confidence: 87%.</div>
-          <div class="risk-bar-label">Risk Level</div>
-          <div class="risk-bar"><div class="risk-fill" style="width:77%;background:var(--warn)"></div></div>
-          <div class="risk-actions">
-            <button class="risk-btn accent" onclick="navigateTo('simulation')">Simulate</button>
-            <button class="risk-btn" onclick="showToast('Task assigned to Education Dept','success')">Assign</button>
-          </div>
+        <!-- demographic model bars (from the b2g project) -->
+        <div class="insights-demo-section">
+          <div class="insights-demo-label">Demographic Model · Historical Growth</div>
+          <div class="insights-demo-bars" id="insightsDemoBars"></div>
         </div>
-
-        <div class="risk-card">
-          <div class="risk-card-top">
-            <span class="risk-badge high">High</span>
-            <span class="risk-time">1h ago</span>
-          </div>
-          <div class="risk-title">Air quality degradation</div>
-          <div class="risk-body">PM2.5 in North industrial zone trending upward. 23% probability of WHO breach during winter. AI confidence: 79%.</div>
-          <div class="risk-bar-label">Risk Level</div>
-          <div class="risk-bar"><div class="risk-fill" style="width:68%;background:var(--warn)"></div></div>
-          <div class="risk-actions">
-            <button class="risk-btn accent" onclick="navigateTo('ecology')">View Data</button>
-            <button class="risk-btn" onclick="showToast('Alert sent to Environmental Agency','info')">Alert Agency</button>
-          </div>
-        </div>
-
-        <div class="risk-card">
-          <div class="risk-card-top">
-            <span class="risk-badge medium">Medium</span>
-            <span class="risk-time">3h ago</span>
-          </div>
-          <div class="risk-title">Water supply pressure drop</div>
-          <div class="risk-body">Population density increase in Southern districts stresses the water distribution network. Infrastructure aging assessment required for 4 primary lines.</div>
-          <div class="risk-bar-label">Risk Level</div>
-          <div class="risk-bar"><div class="risk-fill" style="width:52%;background:var(--t1)"></div></div>
-          <div class="risk-actions">
-            <button class="risk-btn accent" onclick="navigateTo('infrastructure')">View Infra</button>
-            <button class="risk-btn" onclick="showToast('Inspection scheduled','success')">Schedule</button>
-          </div>
-        </div>
-
-        <div class="risk-card">
-          <div class="risk-card-top">
-            <span class="risk-badge medium">Medium</span>
-            <span class="risk-time">5h ago</span>
-          </div>
-          <div class="risk-title">Energy grid imbalance</div>
-          <div class="risk-body">New Karatau residential developments adding load without grid upgrades. Peak demand mismatch anticipated for summer 2025.</div>
-          <div class="risk-bar-label">Risk level</div>
-          <div class="risk-bar"><div class="risk-fill" style="width:45%;background:var(--t1)"></div></div>
-          <div class="risk-actions">
-            <button class="risk-btn accent" onclick="navigateTo('simulation')">Simulate</button>
-            <button class="risk-btn" onclick="showToast('Flagged for grid assessment','info')">Flag</button>
-          </div>
-        </div>
-
-        <div class="risk-card">
-          <div class="risk-card-top">
-            <span class="risk-badge low">Low</span>
-            <span class="risk-time">1d ago</span>
-          </div>
-          <div class="risk-title">Green space coverage decline</div>
-          <div class="risk-body">Urban expansion reducing per-capita green space below 9m²/resident. Three zones identified for park development to maintain WHO standards.</div>
-          <div class="risk-bar-label">Risk level</div>
-          <div class="risk-bar"><div class="risk-fill" style="width:28%;background:var(--ok)"></div></div>
-          <div class="risk-actions">
-            <button class="risk-btn accent" onclick="navigateTo('ecology')">View ecology</button>
-            <button class="risk-btn" onclick="showToast('Noted for planning review','info')">Note</button>
-          </div>
-        </div>
-
       </div>
     </div>
   </div>
@@ -466,86 +424,45 @@
       <div class="page-header">
         <div class="page-header-left">
           <div class="page-label">Strategy</div>
-          <h1>AI development recommendations</h1>
+          <h1>AI Development Recommendations</h1>
           <p class="page-desc">Data-driven proposals ranked by projected impact</p>
         </div>
         <div class="page-header-actions">
           <button class="btn accent" onclick="showToast('Recommendations exported','success')">
             <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M10 7v2a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7"/><polyline points="3 5 6 8 9 5"/><line x1="6" y1="1" x2="6" y2="8"/></svg>
-            Export all
+            Export All
           </button>
         </div>
       </div>
       <div class="rec-grid">
-
         <div class="rec-full-card">
           <div class="rec-card-top"><span class="rec-priority p1">Priority 1</span><span class="rec-category">Transport</span></div>
-          <h3>East–west BRT corridor</h3>
-          <p>Construct a dedicated bus rapid transit corridor linking Eastern residential zones to the central business district and western industrial parks. Current commute time for 180,000 daily travelers averages 68 minutes — this corridor reduces it to 46 minutes.</p>
-          <div class="rec-metrics">
-            <div class="rec-metric"><div class="m-val">180K</div><div class="m-lbl">Riders/day</div></div>
-            <div class="rec-metric"><div class="m-val">−22min</div><div class="m-lbl">Commute</div></div>
-            <div class="rec-metric"><div class="m-val">₸8.4B</div><div class="m-lbl">Investment</div></div>
-            <div class="rec-metric"><div class="m-val">7yr</div><div class="m-lbl">ROI</div></div>
-          </div>
-          <div class="rec-conf">
-            <span>AI confidence</span>
-            <div class="conf-bar"><div class="conf-fill" style="width:88%"></div></div>
-            <span class="conf-pct">88%</span>
-          </div>
+          <h3>East–West BRT Corridor</h3>
+          <p>Construct a dedicated Bus Rapid Transit corridor linking Eastern residential zones to the Central Business District. Current commute time for 180,000 daily travelers averages 68 minutes — this corridor reduces it to 46 minutes.</p>
+          <div class="rec-metrics"><div class="rec-metric"><div class="m-val">180K</div><div class="m-lbl">Riders/day</div></div><div class="rec-metric"><div class="m-val">−22min</div><div class="m-lbl">Commute</div></div><div class="rec-metric"><div class="m-val">₸8.4B</div><div class="m-lbl">Investment</div></div><div class="rec-metric"><div class="m-val">7yr</div><div class="m-lbl">ROI</div></div></div>
+          <div class="rec-conf"><span>AI Confidence</span><div class="conf-bar"><div class="conf-fill" style="width:88%"></div></div><span class="conf-pct">88%</span></div>
         </div>
-
         <div class="rec-full-card">
           <div class="rec-card-top"><span class="rec-priority p2">Priority 2</span><span class="rec-category">Industry</span></div>
-          <h3>North sector industrial rezoning</h3>
-          <p>Rezone 420 hectares in the northern periphery for light-to-medium manufacturing. Environmental impact modeling indicates acceptable ecological footprint with modern emission controls. Projected to create 8,400 direct jobs and ₸2.1B annual economic output.</p>
-          <div class="rec-metrics">
-            <div class="rec-metric"><div class="m-val">8,400</div><div class="m-lbl">New jobs</div></div>
-            <div class="rec-metric"><div class="m-val">420ha</div><div class="m-lbl">Zone area</div></div>
-            <div class="rec-metric"><div class="m-val">₸2.1B</div><div class="m-lbl">Yearly output</div></div>
-            <div class="rec-metric"><div class="m-val">4yr</div><div class="m-lbl">Build-out</div></div>
-          </div>
-          <div class="rec-conf">
-            <span>AI confidence</span>
-            <div class="conf-bar"><div class="conf-fill" style="width:82%"></div></div>
-            <span class="conf-pct">82%</span>
-          </div>
+          <h3>North Sector Industrial Rezoning</h3>
+          <p>Rezone 420 hectares in the northern periphery for light-to-medium manufacturing. Environmental impact modeling indicates acceptable ecological footprint with modern emission controls. Projected to create 8,400 direct jobs.</p>
+          <div class="rec-metrics"><div class="rec-metric"><div class="m-val">8,400</div><div class="m-lbl">New jobs</div></div><div class="rec-metric"><div class="m-val">420ha</div><div class="m-lbl">Zone area</div></div><div class="rec-metric"><div class="m-val">₸2.1B</div><div class="m-lbl">Yearly output</div></div><div class="rec-metric"><div class="m-val">4yr</div><div class="m-lbl">Build-out</div></div></div>
+          <div class="rec-conf"><span>AI Confidence</span><div class="conf-bar"><div class="conf-fill" style="width:82%"></div></div><span class="conf-pct">82%</span></div>
         </div>
-
         <div class="rec-full-card">
           <div class="rec-card-top"><span class="rec-priority p3">Priority 3</span><span class="rec-category">Education</span></div>
-          <h3>Multi-campus school expansion</h3>
-          <p>Construct 3 new schools in high-growth districts (Alatau, Turan, Karatau) to address the projected 2,400-seat shortfall by 2029. Optimal sites identified using population density heatmaps and public transport accessibility scoring.</p>
-          <div class="rec-metrics">
-            <div class="rec-metric"><div class="m-val">3</div><div class="m-lbl">New schools</div></div>
-            <div class="rec-metric"><div class="m-val">2,400</div><div class="m-lbl">Seats</div></div>
-            <div class="rec-metric"><div class="m-val">₸3.6B</div><div class="m-lbl">Investment</div></div>
-            <div class="rec-metric"><div class="m-val">2029</div><div class="m-lbl">Deadline</div></div>
-          </div>
-          <div class="rec-conf">
-            <span>AI confidence</span>
-            <div class="conf-bar"><div class="conf-fill" style="width:87%"></div></div>
-            <span class="conf-pct">87%</span>
-          </div>
+          <h3>Multi-Campus School Expansion</h3>
+          <p>Construct 3 new schools in high-growth districts (Alatau, Turan, Karatau) to address the projected 2,400-seat shortfall by 2029. Optimal sites identified using population density heatmaps and transit accessibility scoring.</p>
+          <div class="rec-metrics"><div class="rec-metric"><div class="m-val">3</div><div class="m-lbl">New schools</div></div><div class="rec-metric"><div class="m-val">2,400</div><div class="m-lbl">Seats</div></div><div class="rec-metric"><div class="m-val">₸3.6B</div><div class="m-lbl">Investment</div></div><div class="rec-metric"><div class="m-val">2029</div><div class="m-lbl">Deadline</div></div></div>
+          <div class="rec-conf"><span>AI Confidence</span><div class="conf-bar"><div class="conf-fill" style="width:87%"></div></div><span class="conf-pct">87%</span></div>
         </div>
-
         <div class="rec-full-card">
           <div class="rec-card-top"><span class="rec-priority p4">Priority 4</span><span class="rec-category">Ecology</span></div>
-          <h3>Syr darya green buffer initiative</h3>
-          <p>Establish a 12km ecological buffer zone along the Syr Darya riverbank, integrating flood protection, biodiversity corridors, and recreational access. Ecological index modelling shows a +0.34 improvement within 3 years of completion.</p>
-          <div class="rec-metrics">
-            <div class="rec-metric"><div class="m-val">12km</div><div class="m-lbl">Buffer</div></div>
-            <div class="rec-metric"><div class="m-val">+0.34</div><div class="m-lbl">Eco index</div></div>
-            <div class="rec-metric"><div class="m-val">₸1.2B</div><div class="m-lbl">Investment</div></div>
-            <div class="rec-metric"><div class="m-val">3yr</div><div class="m-lbl">Impact</div></div>
-          </div>
-          <div class="rec-conf">
-            <span>AI confidence</span>
-            <div class="conf-bar"><div class="conf-fill" style="width:91%"></div></div>
-            <span class="conf-pct">91%</span>
-          </div>
+          <h3>Syr Darya Green Buffer Initiative</h3>
+          <p>Establish a 12km ecological buffer zone along the Syr Darya riverbank, integrating flood protection, biodiversity corridors, and recreational access. Ecological index modelling shows a +0.34 improvement within 3 years.</p>
+          <div class="rec-metrics"><div class="rec-metric"><div class="m-val">12km</div><div class="m-lbl">Buffer</div></div><div class="rec-metric"><div class="m-val">+0.34</div><div class="m-lbl">Eco index</div></div><div class="rec-metric"><div class="m-val">₸1.2B</div><div class="m-lbl">Investment</div></div><div class="rec-metric"><div class="m-val">3yr</div><div class="m-lbl">Impact</div></div></div>
+          <div class="rec-conf"><span>AI Confidence</span><div class="conf-bar"><div class="conf-fill" style="width:91%"></div></div><span class="conf-pct">91%</span></div>
         </div>
-
       </div>
     </div>
   </div>
@@ -555,29 +472,20 @@
     <div class="page-inner">
       <div class="page-header">
         <div class="page-header-left">
-          <div class="page-label">Data layer</div>
+          <div class="page-label">Data Layer</div>
           <h1>Demographics</h1>
           <p class="page-desc">Population distribution, growth trends and social indicators</p>
         </div>
       </div>
       <div class="chart-section">
         <div class="charts-row">
-          <div class="chart-card wide h200">
-            <div class="chart-header"><div><div class="chart-title">Age distribution · 2024</div><div class="chart-sub">By cohort (%)</div></div></div>
-            <div class="canvas-wrap"><canvas id="ageChart"></canvas></div>
-          </div>
-          <div class="chart-card h200">
-            <div class="chart-header"><div><div class="chart-title">District population</div><div class="chart-sub">Thousands</div></div></div>
-            <div class="canvas-wrap"><canvas id="districtChart"></canvas></div>
-          </div>
+          <div class="chart-card wide h200"><div class="chart-header"><div><div class="chart-title">Age Distribution · 2024</div><div class="chart-sub">By cohort (%)</div></div></div><div class="canvas-wrap"><canvas id="ageChart"></canvas></div></div>
+          <div class="chart-card h200"><div class="chart-header"><div><div class="chart-title">District Population</div><div class="chart-sub">Thousands</div></div></div><div class="canvas-wrap"><canvas id="districtChart"></canvas></div></div>
         </div>
       </div>
       <div class="chart-section">
         <div class="charts-row">
-          <div class="chart-card full h180">
-            <div class="chart-header"><div><div class="chart-title">5-Year growth forecast by district</div><div class="chart-sub">AI-projected population change 2024–2029</div></div><div class="chart-badge ai">AI model</div></div>
-            <div class="canvas-wrap"><canvas id="growthChart"></canvas></div>
-          </div>
+          <div class="chart-card full h180"><div class="chart-header"><div><div class="chart-title">5-Year Growth Forecast by District</div><div class="chart-sub">AI-projected population change 2024–2029</div></div><div class="chart-badge ai">AI Model</div></div><div class="canvas-wrap"><canvas id="growthChart"></canvas></div></div>
         </div>
       </div>
     </div>
@@ -588,29 +496,23 @@
     <div class="page-inner">
       <div class="page-header">
         <div class="page-header-left">
-          <div class="page-label">Data layer</div>
+          <div class="page-label">Data Layer</div>
           <h1>Infrastructure</h1>
           <p class="page-desc">Roads, utilities, public facilities and development status</p>
         </div>
       </div>
       <div class="stat-row">
-        <div class="stat-cell"><div class="stat-val">1,240km</div><div class="stat-lbl">Road network</div></div>
-        <div class="stat-cell"><div class="stat-val">94%</div><div class="stat-lbl">Water coverage</div></div>
+        <div class="stat-cell"><div class="stat-val">1,240km</div><div class="stat-lbl">Road Network</div></div>
+        <div class="stat-cell"><div class="stat-val">94%</div><div class="stat-lbl">Water Coverage</div></div>
         <div class="stat-cell"><div class="stat-val">99.1%</div><div class="stat-lbl">Electricity</div></div>
-        <div class="stat-cell"><div class="stat-val">78%</div><div class="stat-lbl">Gas network</div></div>
-        <div class="stat-cell"><div class="stat-val">67%</div><div class="stat-lbl">Fiber internet</div></div>
-        <div class="stat-cell"><div class="stat-val">41</div><div class="stat-lbl">Active projects</div></div>
+        <div class="stat-cell"><div class="stat-val">78%</div><div class="stat-lbl">Gas Network</div></div>
+        <div class="stat-cell"><div class="stat-val">67%</div><div class="stat-lbl">Fiber Internet</div></div>
+        <div class="stat-cell"><div class="stat-val">41</div><div class="stat-lbl">Active Projects</div></div>
       </div>
       <div class="chart-section">
         <div class="charts-row">
-          <div class="chart-card h200">
-            <div class="chart-header"><div><div class="chart-title">Investment by year</div><div class="chart-sub">₸ Billions</div></div></div>
-            <div class="canvas-wrap"><canvas id="investChart"></canvas></div>
-          </div>
-          <div class="chart-card wide h200">
-            <div class="chart-header"><div><div class="chart-title">Condition assessment</div><div class="chart-sub">Score out of 100 by category</div></div></div>
-            <div class="canvas-wrap"><canvas id="conditionChart"></canvas></div>
-          </div>
+          <div class="chart-card h200"><div class="chart-header"><div><div class="chart-title">Investment by Year</div><div class="chart-sub">₸ Billions</div></div></div><div class="canvas-wrap"><canvas id="investChart"></canvas></div></div>
+          <div class="chart-card wide h200"><div class="chart-header"><div><div class="chart-title">Condition Assessment</div><div class="chart-sub">Score out of 100 by category</div></div></div><div class="canvas-wrap"><canvas id="conditionChart"></canvas></div></div>
         </div>
       </div>
     </div>
@@ -621,27 +523,21 @@
     <div class="page-inner">
       <div class="page-header">
         <div class="page-header-left">
-          <div class="page-label">Data layer</div>
+          <div class="page-label">Data Layer</div>
           <h1>Ecology</h1>
           <p class="page-desc">Environmental monitoring, air quality and green space analytics</p>
         </div>
       </div>
       <div class="stat-row" style="grid-template-columns:repeat(4,1fr)">
-        <div class="stat-cell"><div class="stat-val">AQI 62</div><div class="stat-lbl">Air quality index</div></div>
-        <div class="stat-cell"><div class="stat-val">8.2m²</div><div class="stat-lbl">Green space / resident</div></div>
-        <div class="stat-cell"><div class="stat-val">74%</div><div class="stat-lbl">Wastewater treated</div></div>
+        <div class="stat-cell"><div class="stat-val">AQI 62</div><div class="stat-lbl">Air Quality Index</div></div>
+        <div class="stat-cell"><div class="stat-val">8.2m²</div><div class="stat-lbl">Green Space / Resident</div></div>
+        <div class="stat-cell"><div class="stat-val">74%</div><div class="stat-lbl">Wastewater Treated</div></div>
         <div class="stat-cell"><div class="stat-val">18.4t</div><div class="stat-lbl">CO₂ per capita/yr</div></div>
       </div>
       <div class="chart-section">
         <div class="charts-row">
-          <div class="chart-card wide h200">
-            <div class="chart-header"><div><div class="chart-title">Monthly PM2.5 levels</div><div class="chart-sub">Industrial zone vs city average (μg/m³)</div></div><div class="chart-badge live">Monitored</div></div>
-            <div class="canvas-wrap"><canvas id="airChart"></canvas></div>
-          </div>
-          <div class="chart-card h200">
-            <div class="chart-header"><div><div class="chart-title">Land use breakdown</div><div class="chart-sub">% of total area</div></div></div>
-            <div class="canvas-wrap"><canvas id="landChart"></canvas></div>
-          </div>
+          <div class="chart-card wide h200"><div class="chart-header"><div><div class="chart-title">Monthly PM2.5 Levels</div><div class="chart-sub">Industrial zone vs city average (μg/m³)</div></div><div class="chart-badge live">Monitored</div></div><div class="canvas-wrap"><canvas id="airChart"></canvas></div></div>
+          <div class="chart-card h200"><div class="chart-header"><div><div class="chart-title">Land Use Breakdown</div><div class="chart-sub">% of total area</div></div></div><div class="canvas-wrap"><canvas id="landChart"></canvas></div></div>
         </div>
       </div>
     </div>
@@ -652,30 +548,24 @@
 <!-- AI CHAT -->
 <div class="ai-chat" id="aiChat">
   <div class="ai-chat-header" id="aiChatToggle">
-    <div class="ai-chat-title">
-      <span class="pulse-dot-sm"></span>
-      Chat with Steppy
-    </div>
+    <div class="ai-chat-title"><span class="pulse-dot-sm"></span>SteppeOS AI</div>
     <svg class="chat-chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 4.5l3 3 3-3"/></svg>
   </div>
   <div class="ai-chat-body">
     <div class="chat-messages" id="chatMessages">
       <div class="chat-msg assistant">
-        <div class="chat-avatar">S</div>
-        <div class="chat-bubble">Hello. I'm Steppy - your personal AI assistant. Ask me anything about the Shymkent region — demographics, risks, infrastructure, or development scenarios.</div>
+        <div class="chat-avatar">AI</div>
+        <div class="chat-bubble">Hello. I'm the SteppeOS AI assistant. Ask me anything about the Shymkent region — demographics, risks, infrastructure, or development scenarios.</div>
       </div>
     </div>
     <div class="chat-input-row">
-      <input type="text" id="chatInput" placeholder="Ask about…"/>
-      <button id="chatSend">
-        <svg viewBox="0 0 12 12" fill="currentColor"><path d="M1 1l10 5L1 11V7l7-1-7-1V1z"/></svg>
-      </button>
+      <input type="text" id="chatInput" placeholder="Ask about the region…"/>
+      <button id="chatSend"><svg viewBox="0 0 12 12" fill="currentColor"><path d="M1 1l10 5L1 11V7l7-1-7-1V1z"/></svg></button>
     </div>
   </div>
 </div>
 
 <div class="toast-container" id="toastContainer"></div>
-
 <script src="js/app.js"></script>
 </body>
 </html>
