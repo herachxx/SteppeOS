@@ -4,7 +4,7 @@
 AI operating system for regional management.  
 
 ![Status](https://img.shields.io/badge/Status-MVP%20Active-2ecc71?style=flat&logo=rocket&logoColor=white)
-![Version](https://img.shields.io/badge/Version-2.2-3498db?style=flat&logo=gitbook&logoColor=white)
+![Version](https://img.shields.io/badge/Version-2.2.4-3498db?style=flat&logo=gitbook&logoColor=white)
 ![City](https://img.shields.io/badge/City-Shymkent,%20KZ-f1c40f?style=flat&logo=mapmarker&logoColor=black)
 
 </div>
