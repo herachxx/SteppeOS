@@ -36,7 +36,7 @@ Because of this fragmentation:
 - it is extremely difficult to predict the long-term consequences of development projects
 
 As a result, governments can invest billions into infrastructure without clearly understanding the long-term impact.
-I'm not underestimating the capabilities of the government of our country and their regions, I'm just relying on the existence of a human factor: to miss a small but important detail in a huge flow of information, or to forget something, and so on.
+I'm not underestimating the capabilities of the government of our country, I'm just relying on the existence of a human factor: to miss a small but important detail in a huge flow of information, or to forget something, and so on.
 
 ---
 
