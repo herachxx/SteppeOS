@@ -12,7 +12,6 @@ AI operating system for regional management.
 ## What is SteppeOS?   
 
 SteppeOS is an AI-powered SPA (single-page web application) for managing cities and regions.
-It is not just an application.
 It is a data and AI platform that treats a region as a living system and helps governments, businesses, and planners make data-driven decisions about development, infrastructure, and sustainability.  
 
 > **Why "Operating System"?**
